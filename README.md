@@ -15,11 +15,14 @@ Before you begin, make sure you have the following installed on your machine:
 3. Update the connection string in the .env file
 4. Run the db-init.sql file to create the tables in your database
 5. Install the required packages using:
- ```bash
+  ```bash
     pip install -r requirements.txt
-```
+  ```
 6. Now you are ready to launch the app using:
    ```bash
    python app.py
    ```
+
+## Note:
+Make sure to install required dependencies if you want to use a database other than PostgreSQL
    
