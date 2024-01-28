@@ -1,0 +1,23 @@
+DROP TABLE IF EXISTS User CASCADE;
+DROP TABLE IF EXISTS device CASCADE;
+
+
+CREATE TABLE "user" (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    email VARCHAR NOT NULL UNIQUE,
+    password VARCHAR NOT NULL,
+    is_admin BOOLEAN DEFAULT FALSE,
+    is_active BOOLEAN DEFAULT TRUE,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE device (
+    id SERIAL PRIMARY KEY,
+    device_name VARCHAR NOT NULL,
+    user_agent VARCHAR NOT NULL,
+    isactive BOOLEAN DEFAULT TRUE,
+    isblocked BOOLEAN DEFAULT FALSE,
+    user_id INTEGER NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES "user" (id)
+);
